@@ -1,5 +1,5 @@
 # IR Barrier Sensor with LED always turned on
-=======================
+
 Barrier/distance IR sensor Arduino library  working with lightness changes
 
  - **Don`t sees difference between barriers and light * ([look below](#-barrier-differentiation-problem))**<br/>
