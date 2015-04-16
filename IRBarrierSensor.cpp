@@ -21,7 +21,7 @@ bool IRBarrierSensor::isNeedCalibration (bool hasBarrier) {
   return lastCalibrationTime < millis() - calibrationInterval;
 }
 
-IRBarrierSensor::IRBarrierSensor(int _sensorPin, float _barrierLimitDeviation, int _calibrationInterval) : sensorPin(_sensorPin), barrierLimitDeviation(_barrierLimitDeviation), calibrationInterval(_calibrationInterval) {
+IRBarrierSensor::IRBarrierSensor(int _sensorPin, float _sensivityLimit, int _calibrationInterval) : sensorPin(_sensorPin), sensivityLimit(_sensivityLimit), calibrationInterval(_calibrationInterval) {
   calibrate();
 }
 
@@ -32,18 +32,20 @@ void IRBarrierSensor::calibrate () {
   Serial.println("Sensor was calibrated");
 }
 
-bool IRBarrierSensor::hasBarrier () {
+bool IRBarrierSensor::getRaw () {
   float sensorValue = analogRead(sensorPin);
   float deviation = 1 - sensorValue/defaultValue;
-  bool hasBarrier = deviation > barrierLimitDeviation;
-  
-  Serial.print("val: "); Serial.print(sensorValue);
-  Serial.print(" ; def: "); Serial.print(defaultValue);
-  Serial.print(" ; deviation: "); Serial.println(deviation);
+  bool hasBarrier = deviation > sensivityLimit;
   
   if(isNeedCalibration(hasBarrier)) {
     calibrate();
   }
   
-  return hasBarrier;
+  return deviation;
+}
+
+bool IRBarrierSensor::hasBarrier () {
+  float deviation = getRaw();
+  
+  return deviation > sensivityLimit;
 }

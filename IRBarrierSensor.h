@@ -26,6 +26,8 @@ class IRBarrierSensor {
 
     void calibrate ();
 
+    bool getRaw ();
+    
     bool hasBarrier ();
 };
 
