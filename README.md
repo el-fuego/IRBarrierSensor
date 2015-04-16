@@ -1,4 +1,5 @@
 # IR Barrier Sensor with LED always turned on
+<img src="http://python.rk.edu.pl/site_media/resources/python.rk.edu.pl/images/pymcu_led_photodiode.jpg" align="right" width="200" height="223"/>
 
 Barrier/distance IR sensor Arduino library  working with lightness changes
 
