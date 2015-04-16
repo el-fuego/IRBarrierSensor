@@ -16,6 +16,30 @@ For higher sensivity and better barrier differentiation use <a href="https://git
 Vcc is +5V. <br/>
 Use higher LED resitor impedance for higher voltage or lower for lower voltage
 
+#### Example
+
+```cpp
+#include <IRBarrierSensor.h>
+
+// setup pin
+int barrierSensorPin = A3;
+
+void setup() {
+  // declare the LED pin as an OUTPUT:
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+IRBarrierSensor barrierSensor(barrierSensorPin);
+
+void loop() {
+  // turn ON builtin LED if barrier is detected
+  digitalWrite(LED_BUILTIN, barrierSensor.hasBarrier() ? HIGH : LOW);
+  
+  delay(100);
+}
+
+```
+
 #### Algorithm
 1. Calibrate sensor (store sensor value) on robot power ON and every n seconds (0.5 by defaults) if barrier is not detected
 2. Calculate deviation between calibrated and current value
