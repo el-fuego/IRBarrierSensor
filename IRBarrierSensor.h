@@ -20,9 +20,9 @@ class IRBarrierSensor {
   
   public:
     int calibrationInterval;
-    float barrierLimitDeviation;
+    float sensivityLimit;
     
-    IRBarrierSensor(int _sensorPin, float _barrierLimitDeviation = 0.15, int _calibrationInterval = 500);
+    IRBarrierSensor(int _sensorPin, float _sensivityLimit = 0.15, int _calibrationInterval = 500);
 
     void calibrate ();
 
