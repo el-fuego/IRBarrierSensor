@@ -3,10 +3,10 @@
 
 Barrier/distance IR sensor Arduino library  working with lightness changes
 
- - **Don`t sees difference between barriers and light * ([look below](#-barrier-differentiation-problem))**<br/>
- - Needs more power for LEDs<br/>
- - Small sensivity and can`t detect black objects * ([look below](#-sensivity-problem))<br/>
- + Can measure without any dalays<br/>
+* + Can measure without any dalays<br/>
+* - **Don`t sees difference between barriers and light * ([look below](#-barrier-differentiation-problem))**<br/>
+* - Needs more power for LEDs<br/>
+* - Small sensivity and can`t detect black objects * ([look below](#-sensivity-problem))<br/>
 
 For higher sensivity and better barrier differentiation use <a href="https://github.com/el-fuego/IRBarrierSensorPulsedLED">IRBarrierSensorPulsedLED</a>
 
