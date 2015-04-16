@@ -17,12 +17,11 @@ Vcc is +5V. <br/>
 Use higher LED resitor impedance for higher voltage or lower for lower voltage
 
 #### Example
-
 ```cpp
 #include <IRBarrierSensor.h>
 
 // setup pin
-int barrierSensorPin = A3;
+const int barrierSensorPin = A3;
 
 void setup() {
   // declare the LED pin as an OUTPUT:
@@ -37,7 +36,19 @@ void loop() {
   
   delay(100);
 }
+```
 
+#### Advanced configuration
+```cpp
+const int barrierSensorPin = A3;
+const float sensivityLevel = 0.15; // 0.0..1.0
+const int calibrationInterval = 500;  // 100..5000 ms is recommended
+
+IRBarrierSensor barrierSensor(
+  barrierSensorPin,
+  sensivityLevel,
+  calibrationInterval
+);
 ```
 
 #### Algorithm
