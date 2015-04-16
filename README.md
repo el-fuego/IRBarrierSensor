@@ -9,15 +9,9 @@ Barrier/distance IR sensor Arduino library  working with lightness changes
 
 For higher sensivity and better barrier differentiation use <a href="https://github.com/el-fuego/IRBarrierSensorPulsedLED">IRBarrierSensorPulsedLED</a>
 
-#### Curcit
-```
-Vcc  ---=200R=--+-) ->  LED
-GND  -------------) ->
+#### Circuit 
+<img src="circuit.png" />
 
-Vcc --=470K=--
-Ain ---------^-+-( <-  Photodiode
-GND -------------( <-
-```
 Vcc is +5V. <br/>
 Use higher LED resitor impedance for higher voltage or lower for lower voltage
 
