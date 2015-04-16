@@ -4,6 +4,7 @@
 Barrier/distance IR sensor Arduino library  working with lightness changes
 
 * + Can measure without any dalays<br/>
+* + Can use getRaw() to check how far barrier is (slow down robot moving to stay closer to barrier and avoid collapse)
 * - **Don`t sees difference between barriers and light * ([look below](#-barrier-differentiation-problem))**<br/>
 * - Needs more power for LEDs<br/>
 * - Small sensivity and can`t detect black objects * ([look below](#-sensivity-problem))<br/>
